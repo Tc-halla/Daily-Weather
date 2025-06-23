@@ -100,7 +100,7 @@
       user-select: none;
     }
 
-    /* Weather backgrounds */
+
     body.clear {
       background: linear-gradient(to top, #a1c4fd, #c2e9fb);
       color: #333;
@@ -130,7 +130,7 @@
       color: #eee;
     }
 
-    /* Responsive */
+    
     @media (max-width: 450px) {
       .container {
         padding: 20px 15px;
@@ -162,14 +162,14 @@
   </div>
 
   <script>
-    const apiKey = 'efe9ef684d953b368bd3ba37c199ff93'; // Replace this with your OpenWeatherMap API key
+    const apiKey = 'efe9ef684d953b368bd3ba37c199ff93'; 
     const searchBtn = document.getElementById('searchBtn');
     const cityInput = document.getElementById('cityInput');
     const weatherInfo = document.getElementById('weatherInfo');
     const errorDiv = document.getElementById('error');
 
     function setBodyClass(weatherMain, isNight) {
-      document.body.className = ''; // reset classes first
+      document.body.className = ''; 
 
       if (isNight) {
         document.body.classList.add('night');
@@ -227,7 +227,7 @@
         const data = await response.json();
         const { name, sys, weather, main, wind } = data;
 
-        // Determine if it's night based on current time vs sunset/sunrise
+
         const currentTime = new Date().getTime() / 1000;
         const isNight = currentTime < sys.sunrise || currentTime > sys.sunset;
 
